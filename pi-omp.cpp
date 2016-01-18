@@ -78,16 +78,7 @@ public:
     }
 
 
-
 };
-
-/*
- * 3.141561683794713
- * 3.141561683794713
- *
-
- */
-
 
 
 using namespace std;
@@ -145,12 +136,6 @@ int main(int argc, char* argv[]) {
                                         );
 
         NumberGenerator generator(thread__interval);
-
-//#pragma acc routine(trng::utility::u01xx_traits<double, (unsigned long)1, trng::yarn2>::addin) seq
-
-     //   uint64_t old_jump =  (rank * iterations / num_threads);
-
-        ///    cout << "Jump for thread " << rank << " is " << jump << " old " << old_jump << endl;
 
 #pragma omp for
         for (uint64_t i = 0; i < iterations; i++) {
